@@ -1,0 +1,64 @@
+@model TeamPage.Web.BLL.Agencies.AgencyVM
+@{
+    ViewData["Title"] = Model.Name;
+}
+
+<div class="jumbotron">
+    <h1>@Html.DisplayFor(m => Model.Name)</h1>
+    <p>@Html.DisplayFor(m => Model.Url)</p>
+</div>
+
+<div class="row">
+    <div class="col-sm-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Clients
+            </div>
+            
+            @if (Model.Clients == null || !Model.Clients.Any())
+            {
+                <div class="panel-body">
+                    <p class="lead text-muted">No clients registered yet.</p>
+                </div>
+            }
+            else
+            {
+                <div class="list-group">
+                    @foreach (var c in Model.Clients)
+                    {
+                        <div class="list-group-item">@c.Name</div>
+                    }
+
+                </div>
+
+            }
+        </div>
+        
+        
+       
+
+        <div class="alert alert-info">
+            <p>Get your clients to register. <a asp-controller="Client" asp-action="Register" asp-route-id="@Model.UniqueCode" class="btn btn-sm btn-info" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">Client Registration Link</a></p>
+        </div>
+        
+    </div>
+    <div class="col-sm-6">
+        
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Your company details:
+            </div>
+            <div class="panel-body">
+                <h4>@Model.Name<br/><small>@Model.Url</small></h4>
+                <dl>
+                    <dt>Client Registration Code</dt>
+                    <dd>@Model.UniqueCode</dd>
+                </dl>
+            </div>
+        </div>
+
+        <p class="text-right"><a asp-controller="Agency" asp-action="Setup">Want to setup another agency? </a></p>
+
+    </div>
+</div>
+

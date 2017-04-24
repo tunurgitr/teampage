@@ -1,0 +1,59 @@
+@model TeamPage.Web.BLL.Clients.ClientVM
+@{
+    ViewData["Title"] = Model.Name;
+}
+
+
+<div class="jumbotron">
+    <h1>@Html.DisplayFor(m => Model.Name)</h1>
+    <p>@Html.DisplayFor(m => Model.Url)</p>
+</div>
+
+<div class="row">
+    <div class="col-sm-6">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Agencies you work with
+            </div>
+            
+            @if (Model.Agencies == null || !Model.Agencies.Any())
+            {
+                <div class="panel-body">
+                    <p class="lead text-muted">No agencies registered yet.</p>
+                </div>
+            }
+            else
+            {
+                <div class="list-group">
+                    @foreach (var c in Model.Agencies)
+                    {
+                        <div class="list-group-item">
+                            @c.Name
+                        </div>
+                    }
+
+                </div>
+
+            }
+        </div>
+        
+
+    </div>
+    <div class="col-sm-6">
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                Your company details:
+            </div>
+            <div class="panel-body">
+                <h4>@Model.Name<br /><small>@Model.Url</small></h4>
+                
+            </div>
+        </div>
+
+        <p class="text-right">Want to get connected with another agency?</p>
+        <p class="text-right text-muted text-warning">We're still working on that</p>
+
+    </div>
+</div>
+

@@ -1,0 +1,41 @@
+@model TeamPage.Web.BLL.Users.UserSummaryVM
+@{
+    ViewData["Title"] = "Welcome " + @Model.FirstName;
+}
+
+<div class="page-header">
+    <h1>Welcome, @Model.FirstName</h1>
+</div>
+
+
+    <div class="row">
+        
+        <div class="col-sm-6 col-md-5 col-lg-4">
+            
+            
+            @if (Model.Agencies?.Any() ?? false)
+            {
+                <h4>Agencies you work for</h4>
+                <div class="list-group">
+                    @foreach (var a in Model.Agencies)
+                    {
+                        <a class="list-group-item" asp-controller="Agency" asp-action="Detail" asp-route-id="@a.UniqueCode">
+                            <h4>@a.Name</h4>
+                        </a>
+                    }
+                </div>
+            }
+
+            @if (Model.Clients?.Any() ?? false)
+            {
+                <h4>Client companies you work for</h4>
+                @foreach (var a in Model.Clients)
+                {
+                    <a class="list-group-item" asp-controller="Client" asp-action="Detail" asp-route-id="@a.ClientId">
+                        <h4>@a.Name <span class="label label-default pull-right">Client</span></h4>
+                    </a>
+                }
+
+            }
+        </div>
+    </div>

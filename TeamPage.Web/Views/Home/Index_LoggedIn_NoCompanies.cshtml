@@ -1,0 +1,28 @@
+@model TeamPage.Web.BLL.Users.UserSummaryVM
+@{
+    ViewData["Title"] = "Welcome " + @Model.FirstName;
+}
+
+<div class="page-header">
+    <h1>Welcome, @Model.FirstName</h1>
+</div>
+
+
+<h3>It looks like you aren't linked to any companies yet.</h3>
+<div class="row">
+        
+    <div class="col-sm-6 col-md-7 col-lg-8">
+        <h4>New Company</h4>
+        <p>Ready to setup a new company in TeamPage? Read-on for information on how to get started.</p>
+    </div>
+    <div class="col-sm-6 col-md-5 col-lg-4">
+        <div class="well">
+            <h4>Existing Company</h4>
+            <p>Want to get connected with a company already using TeamPage? Contact the company for instructions.</p>
+        </div>
+    </div>
+</div>
+<p>If you need to get connected to an existing company, contact them for a code.</p>
+<p></p>
+<p>You aren't a part of an agency account. <a asp-controller="Agency" asp-action="Setup">Setup a new Agency</a></p>
+<p>You not registered as a client. <a asp-controller="Client" asp-action="Register">Register as a client</a></p>
