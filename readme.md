@@ -1,10 +1,26 @@
 # TeamPage
 
-## Hosted on azure: https://team-page.azurewebsites.net
-
 The thought here is to create a system to connect Agencies and their Clients together. In my experience, there's often not great ways to do this, or the ways available solutions are expensive and require too much customization to get started.
 
 This is a weekend-project to learn more about the changes in MVC core and EF core.
+
+
+## Hosted on azure: https://team-page.azurewebsites.net
+
+### Quick Demo run-through
+Normally, an Agency and a Client wouldn't be created for the same login, but this is the easiest way to see the features:
+1. Click "Register" in the top-right corner of the screen
+2. Fill in the info and click "Register" (email doesn't need to be real, no emails will be sent)
+3. Click the "Setup a new Agency" link towards the bottom of the page.
+4. Put in some fake info for a company -- make sure to use url-friendly text in UniqueCode (I haven't gotten to the validation there yet).
+5. Click Register
+6. You're now at the Agency page
+7. Click the "Client Registration Link" to register a new client company under this same login
+8. Fill out that form and click register
+9. Now you're taken to a page where you can select what company you want to work with
+10. You're probably not blown-away by this -- the real work was in finding the best patterns for a solution like this on .Net Core.
+
+## Notes
 
 After an initial trial implementation, it's clear a few major changes are in-order:
 
