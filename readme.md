@@ -90,6 +90,9 @@ This is admittedly not a super-complex MVC app, so I'd like to lay out where I'm
 - The UI is already hinting at this as it wraps clients and agencies into "Companies" to simplify the mental model for the user. I had started with fully-distinguishing them on the UI, but I quickly realized this was confusing.
 - I need to talk this through and build out some mock-UIs before moving forward.
 
+#### Future things to consider
+
+- [EF 2nd-level caching](https://github.com/VahidN/EFSecondLevelCache.Core/)
 
 
 
