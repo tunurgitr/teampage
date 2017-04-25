@@ -78,7 +78,7 @@ This is admittedly not a super-complex MVC app, so I'd like to lay out where I'm
 ##### UI / AdminLTE
 
 - This is the default Bootstrap theme -- I had started working on integrating AdminLTE using [Bower](https://github.com/almasaeed2010/AdminLTE). There's also a [nuget package](https://github.com/eralston/AdminLteMvc) that is a helpful starting point for core.
-- I'd plan to fork the AdminLTE nuget package and try to structure something that worked well in core and that took advantage of Tag Helpers to implement components. That in-and-of-itself is not a small task, but potentially a helpful one as AdminLTE has worked well for me in the past. Ideally I'd like that to work alongside the bower package.
+- I'd like to adapt the AdminLTE nuget package and try to structure something that worked well in core and that took advantage of Tag Helpers to implement components. That in-and-of-itself is not a small task, but potentially a helpful one as AdminLTE has worked well for me in the past. Ideally I'd like that to work alongside the bower package -- maybe using yeoman.
 
 
 
